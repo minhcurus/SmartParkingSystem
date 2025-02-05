@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 class Program
@@ -9,15 +10,18 @@ class Program
 
         Console.WriteLine("Smart Parking System is starting...\n");
 
-        // Simulate a car entering the parking lot
+        // Print the main thread info
+        Console.WriteLine($"[Main Thread] Process ID: {Process.GetCurrentProcess().Id}, Thread ID: {Thread.CurrentThread.ManagedThreadId}");
+
+        // Simulate car entry and exit with isolated thread management
         await parking.CarEnterAsync("A123");
 
-        // Simulate waiting time before exit
-        await Task.Delay(5000);
+        await Task.Delay(5000); // Simulate time before exiting
 
-        // Simulate a car exiting the parking lot
         await parking.CarExitAsync("A123");
 
+        // Print total number of threads
+        Console.WriteLine($"Total number of threads: {Process.GetCurrentProcess().Threads.Count}");
         Console.WriteLine("Parking system transaction completed!\n");
     }
 }
