@@ -22,25 +22,32 @@ class SmartParkingSystem
     // TODO: Implement parking logic
     public async Task ParkCarAsync(string carNumber)
     {
-        // Student implementation
+        Console.WriteLine($"[Car {carNumber}] Searching for a parking spot...");
+        await Task.Delay(3000); // Simulating parking time
     }
 
     // TODO: Implement payment processing
     public async Task ProcessPaymentAsync(string carNumber)
     {
-        // Student implementation
+        Console.WriteLine($"[Car {carNumber}] Processing payment...");
+        await Task.Delay(2500); // Simulating payment processing time
+        Console.WriteLine($"[Car {carNumber}] Payment successful!");
     }
 
     // TODO: Implement logic for opening the exit barrier
     public async Task OpenExitBarrierAsync(string carNumber)
     {
-        // Student implementation
+        Console.WriteLine($"[Car {carNumber}] Opening exit barrier...");
+        await Task.Delay(1500); // Simulating barrier opening time
+        Console.WriteLine($"[Car {carNumber}] Exit barrier opened.");
     }
 
     // TODO: Implement database update logic
     public async Task UpdateDatabaseAsync(string carNumber)
     {
-        // Student implementation
+        Console.WriteLine($"[Car {carNumber}] Updating database...");
+        await Task.Delay(1000); // Simulating database update time
+        Console.WriteLine($"[Car {carNumber}] Database updated.");
     }
 
     // Implement the process for a car entering the parking lot
